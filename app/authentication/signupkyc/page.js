@@ -1,49 +1,62 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function SignupKyc() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    password: '',
-    confirmPassword: '',
-    gender: '',
+    firstName: "",
+    lastName: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
     termsAccepted: false,
   });
- const router = useRouter();
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission logic here
-    //alert(`Account Created for ${formData.firstName} ${formData.lastName}`);
   };
 
   return (
     <div className="flex min-h-screen">
-      {/* Left side */}
       <div className="w-5/12 bg-[#463A93] flex flex-col justify-between items-center py-8">
-        <div className="text-white text-1xl font-bold flex items-center">
- <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" />
-<path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>&nbsp;
-  back to website
-</div>
+        <div
+          className="text-white text-1xl font-bold flex items-center"
+          onClick={() => router.push("https://techrity.org/")}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M5 12l14 0" />
+            <path d="M5 12l6 6" />
+            <path d="M5 12l6 -6" />
+          </svg>
+          &nbsp; back to website
+        </div>
 
-
-  {/* Copyright */}
-  <div className="text-white text-sm">
-   Terms & Privacy &nbsp;&nbsp; Copyright © 2024 Techrity Inc. All rights reserved.
-  </div>
-
+        <div className="text-white text-sm">
+          Terms & Privacy &nbsp;&nbsp; Copyright © 2024 Techrity Inc. All rights
+          reserved.
+        </div>
       </div>
 
-      {/* Right side - Signup Form */}
       <div className="w-7/12 flex justify-center items-center bg-white">
         <form
           onSubmit={handleSubmit}
@@ -53,7 +66,6 @@ export default function SignupKyc() {
             Sign Up to techrity
           </h2>
 
-          {/* First and Last Name */}
           <div className="flex space-x-4 mb-4">
             <div className="w-1/2">
               <label className="block text-gray-700">First Name</label>
@@ -62,11 +74,11 @@ export default function SignupKyc() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                placeholder="Ada"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
-                style={{ borderColor: '#463A93' }}
+                placeholder="@Ada"
+                className="w-full pl-5 pr-4 py-2 rounded-lg border-2 border-black text-black placeholder-gray-500 placeholder:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+
             <div className="w-1/2">
               <label className="block text-gray-700">Last Name</label>
               <input
@@ -74,14 +86,12 @@ export default function SignupKyc() {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                placeholder="Segun"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
-                style={{ borderColor: '#463A93' }}
+                placeholder="@Segun"
+                className="w-full pl-5 pr-4 py-2 rounded-lg border-2 border-black text-black placeholder-gray-500 placeholder:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
 
-          {/* Password */}
           <div className="flex space-x-4 mb-4">
             <div className="w-1/2">
               <label className="block text-gray-700">Password</label>
@@ -91,8 +101,7 @@ export default function SignupKyc() {
                 value={formData.password}
                 onChange={handleChange}
                 placeholder="+ 6 Characters"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
-                style={{ borderColor: '#463A93' }}
+                className="w-full pl-5 pr-4 py-2 rounded-lg border-2 border-black text-black placeholder-gray-500 placeholder:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div className="w-1/2">
@@ -103,21 +112,18 @@ export default function SignupKyc() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 placeholder="+ 6 Characters"
-                className="w-full px-4 py-2 border rounded-md focus:outline-none"
-                style={{ borderColor: '#463A93' }}
+                className="w-full pl-5 pr-4 py-2 rounded-lg border-2 border-black text-black placeholder-gray-500 placeholder:text-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
               />
             </div>
           </div>
 
-          {/* Gender */}
           <div className="mb-4">
             <label className="block text-gray-700">Gender</label>
             <select
               name="gender"
               value={formData.gender}
               onChange={handleChange}
-              className="w-full px-4 py-2 border rounded-md focus:outline-none"
-              style={{ borderColor: '#463A93' }}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none text-black"
             >
               <option>Rather not say</option>
               <option>Male</option>
@@ -126,16 +132,14 @@ export default function SignupKyc() {
             </select>
           </div>
 
-          {/* Create Account Button */}
           <button
             type="submit"
             className="w-full bg-[#463A93] text-white py-3 rounded-full hover:bg-[#3c327c] mb-4"
-            onClick={() => router.push('/authentication/signupcv')}
+            onClick={() => router.push("/authentication/signupcv")}
           >
             Create Account
           </button>
 
-          {/* Terms */}
           <div className="flex items-start mb-4">
             <input
               type="checkbox"
@@ -145,19 +149,21 @@ export default function SignupKyc() {
               className="mr-2"
             />
             <p className="text-xs text-gray-500">
-              I agree with Techrity's{' '}
-              <span className="underline">Terms of Services</span>,{' '}
-              <span className="underline">Privacy Policy</span> and default{' '}
+              I agree with Techrity's{" "}
+              <span className="underline">Terms of Services</span>,{" "}
+              <span className="underline">Privacy Policy</span> and default{" "}
               <span className="underline">Newsletter Notifications</span>.
             </p>
           </div>
 
-          {/* Already have an account */}
           <p className="text-sm text-center text-gray-700">
-            Already have an account?{' '}
-            <span className="font-semibold underline cursor-pointer"
-            onClick={() => router.push('/authentication/signin')}
-            >Login</span>
+            Already have an account?{" "}
+            <span
+              className="font-semibold underline cursor-pointer"
+              onClick={() => router.push("/authentication/signin")}
+            >
+              Login
+            </span>
           </p>
         </form>
       </div>

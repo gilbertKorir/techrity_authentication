@@ -28,7 +28,7 @@ body {
   color: var(--foreground);
   font-family: '"Now Alt"', sans-serif;
 }
-input {
+input, select {
   border: 1px solid #463A93 !important;
 }
 
