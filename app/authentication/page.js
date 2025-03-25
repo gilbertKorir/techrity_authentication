@@ -18,13 +18,16 @@ export default function Home() {
     <div className="flex min-h-screen">
       {/* Left side with purple background */}
 <div className="w-5/12 bg-[#463A93] flex flex-col justify-between items-center py-8">
-<div className="text-white text-1xl font-bold">
-    back to website
-  </div>
+<div className="text-white text-1xl font-bold flex items-center">
+ <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" />
+<path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>&nbsp;
+  back to website
+</div>
+
 
   {/* Copyright */}
   <div className="text-white text-sm">
-   Terms & Privacy  Copyright © 2024 Techrity Inc. All rights reserved.
+   Terms & Privacy &nbsp;&nbsp; Copyright © 2024 Techrity Inc. All rights reserved.
   </div>
 </div>
 
@@ -33,20 +36,23 @@ export default function Home() {
     <div className="w-7/12 flex justify-center items-center bg-white">
   <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
     {/* Title */}
-    <h2 className="text-2xl font-bold text-black text-center mb-4">Sign Up to techrity</h2>
+    <h2 className="text-2xl font-bold text-black mb-4">Sign Up to techrity</h2>
 
-    <p className="text-sm text-gray-600 mb-4">Continue with email</p>
+  <p className="text-sm text-black mb-4" style={{ fontFamily: 'Adamina' }}>
+  Continue with email
+</p>
+
 
     {/* Email Input */}
-    <div className="mb-4 relative">
-      <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">📧</span>
-      <input
-        type="email"
-        placeholder="example@gmail.com"
-        className="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
-        style={{ borderColor: '#463A93' }}
-      />
-    </div>
+<div className="mb-5 relative w-full max-w-md">
+  <label className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-700 text-lg">📧</label>
+  <input
+    type="email"
+    placeholder="example@gmail.com"
+    className="w-full pl-10 pr-4 py-3 rounded-lg border-2 border-black text-black placeholder-gray-500 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+  />
+</div>
+
 
     {/* Sign Up Button */}
     <button className="w-full bg-[#463A93] text-white py-3 rounded-full hover:bg-[#3c327c] mb-4"
@@ -74,14 +80,14 @@ export default function Home() {
     </button>
 
     {/* Terms and Privacy */}
-    <p className="text-xs text-gray-500 text-center mb-4">
-      By creating an account, you agree with our <span className="underline">Terms of Services</span>,
-      <span className="underline"> Privacy Policy</span>, and our default Newsletters.
+    <p className="text-xs text-gray-600 text-center mb-4" style={{ fontFamily: 'Now Alt' }}>
+      By creating an account, you agree with our Terms of Services,
+     Privacy Policy, and our default Newsletters.
     </p>
 
     {/* Already have an account */}
     <p className="text-sm text-center text-gray-700">
-      Already have an account? 
+      Already have an account?&nbsp;&nbsp;
      <span className="font-semibold underline cursor-pointer"
     onClick={() => router.push('/authentication/signin')}
      >Login</span>

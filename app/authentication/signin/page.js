@@ -19,10 +19,17 @@ export default function SignIn() {
     <div className="flex min-h-screen">
       {/* Left side */}
       <div className="w-5/12 bg-[#463A93] flex flex-col justify-between items-center py-8">
-        <div className="text-white text-1xl font-bold">back to website</div>
-        <div className="text-white text-sm">
-          Terms & Privacy | Copyright © 2024 Techrity Inc. All rights reserved.
-        </div>
+      <div className="text-white text-1xl font-bold flex items-center">
+ <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" />
+<path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>&nbsp;
+  back to website
+</div>
+
+
+  {/* Copyright */}
+  <div className="text-white text-sm">
+   Terms & Privacy &nbsp;&nbsp; Copyright © 2024 Techrity Inc. All rights reserved.
+  </div>
       </div>
 
       {/* Right Side - Sign In */}
