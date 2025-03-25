@@ -21,8 +21,8 @@ A simple authentication system that allows users to sign up, sign in, and reset 
 Clone the repository and install dependencies:
 
 ```bash
-git clone <repository-url>
-cd techrity-authentication-project
+git clone https://github.com/gilbertKorir/techrity_authentication.git
+cd techrity-authentication
 npm install
 ```
 
